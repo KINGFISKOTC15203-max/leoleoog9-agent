@@ -1,0 +1,27 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "AI_GATEWAY_API_KEY",
+      "description": "Credential for the agent's model (callstack/apex, a Vercel AI Gateway model ID). Create one at https://vercel.com/dashboard -> AI Gateway -> API keys. Without it the chat UI loads but agent turns fail.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "BETTER_AUTH_SECRET",
+      "description": "Signing secret for Better Auth sessions. Development mode falls back to a local placeholder; set a real random string before using Vercel sign-in.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "VERCEL_APP_CLIENT_ID",
+      "description": "Client ID of a Vercel OAuth app used for the 'Continue with Vercel' sign-in (vercel.com/dashboard -> Settings -> Apps).",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "VERCEL_APP_CLIENT_SECRET",
+      "description": "Client secret of the same Vercel OAuth app.",
+      "requiredAtBoot": false
+    }
+  ]
+}
